@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppBancoPix.View.Login"
+             BackgroundColor="White">
+
+    <ContentPage.Content>
+
+        <StackLayout>
+            <!-- Imagem Inter -->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Image x:Name="logo" Scale="0.3"/>
+            </Grid>
+
+            <!-- Interface Login -->
+        <Frame x:Name="loginForm"
+               VerticalOptions="Fill"
+               BackgroundColor="White"
+               BorderColor="Black"
+               Margin="20"
+               Scale="1"
+               MinimumWidthRequest="20"
+               Opacity="1">
+
+                <StackLayout Padding="10">
+                    <Label TextColor="Black" Text="CPF:"/>
+                    <Entry x:Name="cpfEntry" MaxLength="11"/>
+                    <Label TextColor="Black" Text="Senha:"/>
+                    <Entry x:Name="senhaEntry" IsPassword="True"/>
+                </StackLayout>
+            </Frame>
+            
+            <Button x:Name="entrar"
+                    Text="Entrar" 
+                    BackgroundColor="#fc7c04"
+                    Scale="1"
+                    Margin="20"
+                    VerticalOptions="Fill"
+                    Clicked="Button_Clicked" />
+
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>
+    
