@@ -25,7 +25,17 @@ namespace AppBancoPix.View
 
         private void entrarButton_Clicked(object sender, EventArgs e)
         {
-           
+
+        }
+
+        private void cpfEntry_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+        }
+
+        private void esquecisenhaButton_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 }

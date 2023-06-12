@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppBancoPix.View.Login"
-             BackgroundColor="White">
+             BackgroundColor="White"
+             xmlns:control="clr-namespace:Xamarin.Forms.MaskedEntry;assembly=Xamarin.Forms.MaskedEntry">
 
     <ContentPage.Content>
 
@@ -17,21 +18,28 @@
                 <Image x:Name="logo" Scale="0.3"/>
             </Grid>
 
-            <Frame x:Name="loginForm"
+            <Frame x:Name="loginForm"                      
                        Grid.Row="0"
                        VerticalOptions="CenterAndExpand"
                        BackgroundColor="White"
-                       BorderColor="Black"
-                       Margin="20"
+                       BorderColor="#fc7c04"
+                       Margin="20,90,20,60"
                        Scale="1"
                        MinimumWidthRequest="20"
                        Opacity="1">
 
                     <StackLayout Padding="10">
-                        <Label TextColor="Black" Text="CPF:"/>
-                        <Entry x:Name="cpfEntry" MaxLength="11"/>
-                        <Label TextColor="Black" Text="Senha:"/>
-                        <Entry x:Name="senhaEntry" IsPassword="True"/>
+                        <Label TextColor="Black" FontSize="17" Text="CPF:"/>
+                    <control:MaskedEntry x:Name="txt_cpf" 
+                                             TextColor="Black" 
+                                             Keyboard="Numeric" 
+                                             FontAttributes="Bold" 
+                                             Mask="XXX.XXX.XXX-XX"/>
+
+
+                    <Label TextColor="Black" FontSize="17" Text="Senha:"/>
+                        <Entry x:Name="senhaEntry" TextColor="Black" MaxLength="50" IsPassword="True"/>
+                            
                     </StackLayout>
                 </Frame>
 
@@ -39,17 +47,25 @@
                     Text="Entrar" 
                     BackgroundColor="#fc7c04"
                     Scale="1"
-                    Margin="20,-45,20,0"
+                    Margin="20,-50,20,0"
                     VerticalOptions="End"
                     Clicked="entrarButton_Clicked" />
 
+            <Button x:Name="esquecisenhaButton"
+                    Text="Esqueci minha senha"
+                    BackgroundColor="White"
+                    TextColor="#fc7c04"
+                    VerticalOptions="End"
+                    Scale="0.9"
+                    Margin="20, 10"/>
+
             <Button x:Name="cadastroButton"
-                    Text="Cadastrar uma conta"                    
+                    Text="Criar uma conta"                    
                     BackgroundColor="White"                    
                     TextColor="#fc7c04"                   
                     VerticalOptions="End"
                     Scale="0.9"
-                    Margin="100,200,100,0" 
+                    Margin="100,100,100,50" 
                     Clicked="cadastroButton_Clicked"/>
 
         </StackLayout>

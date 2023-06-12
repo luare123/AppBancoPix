@@ -2,8 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppBancoPix.View.Cadastro"
-             BackgroundColor="White">
-    
+             BackgroundColor="White"
+             xmlns:control="clr-namespace:Xamarin.Forms.MaskedEntry;assembly=Xamarin.Forms.MaskedEntry">
+
     <ContentPage.Content>
         <StackLayout>
             <!-- Imagem Inter -->
@@ -28,16 +29,23 @@
 
                 <StackLayout Padding="10">
                     <Label TextColor="Black" Text="Nome:" />
-                    <Entry x:Name="nomeEntry" />
+                    <Entry x:Name="nomeEntry" TextColor="Black"/>
 
                     <Label TextColor="Black" Text="Email:" />
-                    <Entry x:Name="emailEntry" Keyboard="Email" />
+                    <control:MaskedEntry x:Name="cadastroEmail" 
+                                             TextColor="Black" 
+                                             Keyboard="Email" 
+                                             FontAttributes="Bold"/>
 
                     <Label TextColor="Black" Text="CPF:" />
-                    <Entry x:Name="cpfEntry" MaxLength="11" />
+                    <control:MaskedEntry x:Name="cadastroCPF" 
+                                             TextColor="Black" 
+                                             Keyboard="Numeric" 
+                                             FontAttributes="Bold"                                           
+                                             Mask="XXX.XXX.XXX-XX"/>
 
                     <Label TextColor="Black" Text="Data de Nascimento:" />
-                    <DatePicker x:Name="dataNascimentoPicker" />
+                    <DatePicker x:Name="dataNascimentoPicker" TextColor="Black" />
                 </StackLayout>
             </Frame>
 
@@ -45,7 +53,7 @@
                 Text="Cadastrar"
                 BackgroundColor="#fc7c04"
                 Scale="1"
-                Margin="20"
+                Margin="20, -10"
                 VerticalOptions="End"
                 Clicked="CadastrarButton_Clicked"/>
 

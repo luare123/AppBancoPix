@@ -10,8 +10,8 @@ namespace AppBancoPix
         {
             InitializeComponent();
 
-            MainPage = new View.Login();
-        }
+            MainPage = new View.Login();           
+        }    
 
         protected override void OnStart()
         {
