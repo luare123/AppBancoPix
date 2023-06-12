@@ -18,9 +18,14 @@ namespace AppBancoPix.View
             logo.Source = ImageSource.FromResource("AppBancoPix.Imagens.LogoInter.png");
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private void cadastroButton_Clicked(object sender, EventArgs e)
         {
+            App.Current.MainPage = new NavigationPage(new Cadastro());
+        }
 
+        private void entrarButton_Clicked(object sender, EventArgs e)
+        {
+           
         }
     }
 }
